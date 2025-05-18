@@ -12,6 +12,23 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "myExtensionView",
+          "title": "Learn",
+          "icon": "image/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "myExtensionView": [
+        {
+          "id": "myView",
+          "name": "Learn Lamda"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "learn_lambda.enterToken",
