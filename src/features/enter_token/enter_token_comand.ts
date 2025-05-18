@@ -1,6 +1,6 @@
+import { Command } from "../../core/commands/command";
 import { currentLocale } from "../../extension";
-import { Command } from "./command";
-import * as vscode from 'vscode';
+ import * as vscode from 'vscode';
 
 export class EnterTokenCommand extends Command {
     registerCommand: string = 'learn_lambda.enterToken';

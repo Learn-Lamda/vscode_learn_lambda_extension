@@ -18,8 +18,8 @@
         "title": "Enter token"
       },
       {
-        "command": "learn_lambda.runTask",
-        "title": "Run Task"
+        "command": "learn_lambda.runOnCurrentFile",
+        "title": "learn_lambda: Run on current file"
       },
       {
         "command": "learn_lambda.SyncTask",

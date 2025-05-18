@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Result } from "../helpers/result";
-import { Lines } from "../commands/run_task";
+
 export type HttpMethodType = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "PATCH" | "HEAD";
 
 export class HttpRepository {
@@ -24,9 +24,5 @@ export class HttpRepository {
       return Result.error(error as Error);
     }
   }
-  runVm = (code: string) => this.jsonRequest<{ value: Lines[] }>('/vm', "POST", {
-    "code": code,
-    "token": "123",
-    "taskId": "3123"
-  });
+ 
 }

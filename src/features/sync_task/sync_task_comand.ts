@@ -1,5 +1,5 @@
 import { ExtensionContext } from "vscode";
-import { Command } from "./command";
+import { Command } from "../../core/commands/command";
 
 export class SyncTask extends Command{
     registerCommand: string = 'learn_lambda.SyncTask';
