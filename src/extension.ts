@@ -13,18 +13,23 @@ export function activate(context: vscode.ExtensionContext) {
   // context.subscriptions.push(
   //   vscode.window.registerTreeDataProvider("myView", new MyInputViewProvider(context))
   // );
-  vscode.window.registerWebviewViewProvider(
-    "myView",
-    new MyInputViewProvider(context)
-  ),
-    [new EnterTokenCommand(), new RunOnCurrentFile(), new SyncTask()].forEach(
-      (command) =>
-        context.subscriptions.push(
-          vscode.commands.registerCommand(command.registerCommand, () =>
-            command.command(context)
-          )
+  const provider = new MyInputViewProvider(context);
+
+  // Регистрируем вебвью в боковой панели с id "myInputView"
+  context.subscriptions.push(
+    vscode.window.registerWebviewViewProvider(
+      "myExtension.myInputView",
+      provider
+    )
+  );
+  [new EnterTokenCommand(), new RunOnCurrentFile(), new SyncTask()].forEach(
+    (command) =>
+      context.subscriptions.push(
+        vscode.commands.registerCommand(command.registerCommand, () =>
+          command.command(context)
         )
-    );
+      )
+  );
 }
 
 export function deactivate() {}

@@ -9,23 +9,23 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./dist/extension.js",
+  
   "contributes": {
-    "viewsContainers": {
+   "viewsContainers": {
       "activitybar": [
         {
-          "id": "myExtensionView",
-          "title": "Learn",
+          "id": "myExtensionSidebar",
+          "title": "Моя Панель",
           "icon": "image/logo.svg"
         }
       ]
     },
     "views": {
-      "myExtensionView": [
+      "myExtensionSidebar": [
         {
-          "id": "myView",
-          "name": "Learn Lamda"
+          "id": "myExtension.myInputView",
+          "name": "Ввод текста"
         }
       ]
     },
